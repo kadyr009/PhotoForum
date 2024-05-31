@@ -25,8 +25,6 @@ namespace PhotoForum
 
         private void Newsline_Load(object sender, EventArgs e)
         {
-            Program.newsline = this;
-
             Update_Newsline();
         }
 
@@ -35,26 +33,6 @@ namespace PhotoForum
             this.Hide();
             AddPhoto addingForm = new AddPhoto();
             addingForm.ShowDialog();
-        }
-
-        private int LikesCount(string photoID)
-        {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString)) { 
-                string likesCountQuery = "SELECT * FROM Likes WHERE PhotoID = @PhotoID";
-                SQLiteCommand likesCountCommand = new SQLiteCommand(likesCountQuery, connection);
-                likesCountCommand.Parameters.AddWithValue("@PhotoID", photoID);
-                connection.Open();
-                SQLiteDataReader likesCountReader = likesCountCommand.ExecuteReader();
-
-                int likesCount = 0;
-
-                while (likesCountReader.Read())
-                {
-                    likesCount++;
-                }
-
-                return likesCount;  
-            }
         }
 
         public void CreatePanel(PhotoControl formsControl)
@@ -68,6 +46,7 @@ namespace PhotoForum
             {
                 string query = "SELECT * FROM Photos";
                 SQLiteCommand command = new SQLiteCommand(query, connection);
+
                 connection.Open();
                 SQLiteDataReader reader = command.ExecuteReader();
 
@@ -75,8 +54,8 @@ namespace PhotoForum
                 {
                     PhotoControl photoControl = new PhotoControl();
                     photoControl.PhotoPath = reader["ImagePath"].ToString();
-                    photoControl.LikesCount = LikesCount(reader["PhotoID"].ToString());
                     photoControl.Description = reader["Description"].ToString();
+                    photoControl.PhotoID = Convert.ToInt32(reader["PhotoID"]);
                     photoControl.Width = 372;
                     photoControl.Height = 320;
 

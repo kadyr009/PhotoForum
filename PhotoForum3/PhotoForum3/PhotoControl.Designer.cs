@@ -113,6 +113,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PhotoControl";
             this.Size = new System.Drawing.Size(372, 320);
+            this.Load += new System.EventHandler(this.PhotoControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

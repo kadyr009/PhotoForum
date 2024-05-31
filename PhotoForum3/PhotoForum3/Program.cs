@@ -13,9 +13,7 @@ namespace PhotoForum
         /// Главная точка входа для приложения.
         /// </summary>
         /// 
-
-        public static int userID;
-        public static Newsline newsline;
+        public static int UserID;
 
         [STAThread]
         static void Main()
@@ -38,7 +36,7 @@ namespace PhotoForum
                 if (!TableExists(connection, "Users")) 
                 {
                     string createTableQuery = @"CREATE TABLE Users (
-                                    UserID INT IDENTITY(1,1) PRIMARY KEY,
+                                    UserID INTEGER PRIMARY KEY AUTOINCREMENT,
                                     Username NVARCHAR(50) UNIQUE NOT NULL,
                                     Password NVARCHAR(255) NOT NULL,
                                     Email NVARCHAR(100) UNIQUE NOT NULL,
@@ -64,7 +62,7 @@ namespace PhotoForum
                 if (!TableExists(connection, "Comments"))
                 {
                     string createTableQuery = @"CREATE TABLE Comments (
-                                    CommentID INTEGER IDENTITY(1,1) PRIMARY KEY,
+                                    CommentID INTEGER PRIMARY KEY AUTOINCREMENT,
                                     PhotoID INTEGER NOT NULL,
                                     UserID INTEGER NOT NULL,
                                     CommentText NVARCHAR(255) NOT NULL,
@@ -78,7 +76,7 @@ namespace PhotoForum
                 if (!TableExists(connection, "Likes"))
                 {
                     string createTableQuery = @"CREATE TABLE Likes (
-                                    LikeID INT IDENTITY(1,1) PRIMARY KEY,
+                                    LikeID INTEGER PRIMARY KEY AUTOINCREMENT,
                                     PhotoID INT NOT NULL,
                                     UserID INT NOT NULL,
                                     DateLiked DATETIME DEFAULT CURRENT_TIMESTAMP,

@@ -55,7 +55,7 @@ namespace PhotoForum
                 string query = "INSERT INTO Photos (UserID, Title, Description, DateUploaded, ImagePath) VALUES (@UserID, @Title, @Description, @DateUploaded, @ImagePath)";
                 SQLiteCommand command = new SQLiteCommand(query, connection);
 
-                command.Parameters.AddWithValue("@UserID", Program.userID);
+                command.Parameters.AddWithValue("@UserID", Program.UserID);
                 command.Parameters.AddWithValue("@Title", title);
                 command.Parameters.AddWithValue("@Description", description);
                 command.Parameters.AddWithValue("@DateUploaded", DateTime.Now);
@@ -69,8 +69,8 @@ namespace PhotoForum
                     System.Windows.MessageBox.Show("Image uploaded successfully!");
 
                     this.Hide();
-                    Program.newsline.Update_Newsline();
-                    Program.newsline.Show();
+                    Newsline newsline = new Newsline(); 
+                    newsline.ShowDialog();
                     this.Close();
                 }
                 else

@@ -37,12 +37,13 @@ namespace PhotoForum
 
                 connection.Open();
 
-                SQLiteDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
-                    MessageBox.Show($"{reader["UserID"].ToString()}");
-                    isValid = true;
+                    if (reader.Read())
+                    {
+                        Program.UserID = int.Parse(reader["UserID"].ToString());
+                        isValid = true;
+                    }
                 }
             }
 
