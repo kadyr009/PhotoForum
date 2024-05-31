@@ -16,7 +16,7 @@ namespace PhotoForum
     public partial class PhotoControl : UserControl
     {
         private string connectionString = "Data Source=PhotoForumDB.sqlite;";
-        private int photoId = -1;
+        private int photoID = -1;
 
         public PhotoControl()
         {
@@ -27,8 +27,8 @@ namespace PhotoForum
 
         public int PhotoID
         {
-            get { return photoId; }
-            set { photoId = value; }
+            get { return photoID; }
+            set { photoID = value; }
         }
 
         public string PhotoPath
@@ -50,21 +50,48 @@ namespace PhotoForum
             if (ShowCommentsClicked != null)
                 ShowCommentsClicked(this, EventArgs.Empty);
         }
+
         private void PhotoControl_Load(object sender, EventArgs e)
         {
             lblLikesCount.Text = CountLikes().ToString();
         }
+
         private void LikeBut_Click(object sender, EventArgs e)
         {
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
 
-                string insertLikeQuery = "INSERT INTO Likes (PhotoID, UserID) VALUES (@PhotoID, @UserID)";
-                using (SQLiteCommand insertLikeCommand = new SQLiteCommand(insertLikeQuery, connection))
+                string isAlreadyLikedQuery = "SELECT * FROM Likes WHERE PhotoID = @PhotoID";
+                using (SQLiteCommand isAlreadyLikedCommand = new SQLiteCommand(isAlreadyLikedQuery, connection))
                 {
-                    insertLikeCommand.Parameters.AddWithValue("@UserID", Program.UserID);
-                    insertLikeCommand.Parameters.AddWithValue("@PhotoID", photoId);
+                    isAlreadyLikedCommand.Parameters.AddWithValue("@PhotoID", photoID);
+
+                    using (SQLiteDataReader reader = isAlreadyLikedCommand.ExecuteReader())
+                    {
+                        bool isAlreadyLiked = false;
+
+                        while (reader.Read())
+                        { 
+                            if (int.Parse(reader["UserID"].ToString()) == Program.UserID)
+                            {
+                                isAlreadyLiked = true;
+                                break;
+                            }
+                        }
+
+                        if (!isAlreadyLiked)
+                        {
+                            string insertLikeQuery = "INSERT INTO Likes (PhotoID, UserID) VALUES (@PhotoID, @UserID)";
+                            using (SQLiteCommand insertLikeCommand = new SQLiteCommand(insertLikeQuery, connection))
+                            {
+                                insertLikeCommand.Parameters.AddWithValue("@UserID", Program.UserID);
+                                insertLikeCommand.Parameters.AddWithValue("@PhotoID", photoID);
+
+                                insertLikeCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -78,7 +105,7 @@ namespace PhotoForum
                 string countLikesQuery = "SELECT COUNT(*) FROM Likes WHERE PhotoID = @PhotoID";
                 using (SQLiteCommand countLikesCommand = new SQLiteCommand(countLikesQuery, connection))
                 {
-                    countLikesCommand.Parameters.AddWithValue("@PhotoID", photoId);
+                    countLikesCommand.Parameters.AddWithValue("@PhotoID", photoID);
 
                     connection.Open();
 
