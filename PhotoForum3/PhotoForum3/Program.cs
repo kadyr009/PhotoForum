@@ -14,6 +14,7 @@ namespace PhotoForum
         /// </summary>
         /// 
         public static int UserID;
+        public static Newsline Newsline;
 
         [STAThread]
         static void Main()

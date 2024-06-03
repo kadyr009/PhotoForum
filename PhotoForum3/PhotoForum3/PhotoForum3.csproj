@@ -76,6 +76,18 @@
     <Compile Include="AddPhoto.Designer.cs">
       <DependentUpon>AddPhoto.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommentControl.Designer.cs">
+      <DependentUpon>CommentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommentWrite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommentWrite.Designer.cs">
+      <DependentUpon>CommentWrite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPhoto.resx">
       <DependentUpon>AddPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentControl.resx">
+      <DependentUpon>CommentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommentWrite.resx">
+      <DependentUpon>CommentWrite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

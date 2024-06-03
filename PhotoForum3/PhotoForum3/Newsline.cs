@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Collections;
 using System.Security.Cryptography;
+using System.Windows.Controls;
 
 namespace PhotoForum
 {
@@ -21,10 +22,24 @@ namespace PhotoForum
         public Newsline()
         {
             InitializeComponent();
+
+            NewslineLayoutPanel.Resize += new EventHandler(NewslineLayoutPanel_Resize);
+        }
+
+        private void NewslineLayoutPanel_Resize(object sender, EventArgs e)
+        {
+            foreach (System.Windows.Forms.Control control in NewslineLayoutPanel.Controls)
+            { 
+                int horizontalMargin = (NewslineLayoutPanel.ClientSize.Width - control.Width) / 2;
+
+                control.Margin = new Padding(horizontalMargin, control.Margin.Top, horizontalMargin, control.Margin.Bottom);
+            }
         }
 
         private void Newsline_Load(object sender, EventArgs e)
         {
+            Program.Newsline = this;
+
             Update_Newsline();
         }
 
@@ -42,6 +57,8 @@ namespace PhotoForum
 
         public void Update_Newsline()
         {
+            NewslineLayoutPanel.Controls.Clear();
+
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 string query = "SELECT * FROM Photos";
@@ -52,12 +69,14 @@ namespace PhotoForum
 
                 while (reader.Read())
                 {
-                    PhotoControl photoControl = new PhotoControl();
-                    photoControl.PhotoPath = reader["ImagePath"].ToString();
-                    photoControl.Description = reader["Description"].ToString();
-                    photoControl.PhotoID = Convert.ToInt32(reader["PhotoID"]);
-                    photoControl.Width = 372;
-                    photoControl.Height = 320;
+                    PhotoControl photoControl = new PhotoControl
+                    {
+                        PhotoPath = reader["ImagePath"].ToString(),
+                        Description = reader["Description"].ToString(),
+                        PhotoID = Convert.ToInt32(reader["PhotoID"]),
+                        Width = 375,
+                        Height = 320
+                    };
 
                     NewslineLayoutPanel.Controls.Add(photoControl);
                 }

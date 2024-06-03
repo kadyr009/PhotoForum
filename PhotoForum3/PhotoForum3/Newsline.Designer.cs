@@ -33,7 +33,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.NewslineLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.NewslineLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddPhoto
@@ -64,28 +66,41 @@
             // 
             this.NewslineLayoutPanel.AutoScroll = true;
             this.NewslineLayoutPanel.AutoSize = true;
+            this.NewslineLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.NewslineLayoutPanel.Controls.Add(this.button1);
             this.NewslineLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NewslineLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.NewslineLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.NewslineLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.NewslineLayoutPanel.Name = "NewslineLayoutPanel";
-            this.NewslineLayoutPanel.Padding = new System.Windows.Forms.Padding(500, 0, 500, 0);
-            this.NewslineLayoutPanel.Size = new System.Drawing.Size(800, 450);
+            this.NewslineLayoutPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NewslineLayoutPanel.Size = new System.Drawing.Size(1130, 533);
             this.NewslineLayoutPanel.TabIndex = 0;
             this.NewslineLayoutPanel.WrapContents = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(3, 507);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Newsline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1130, 533);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.NewslineLayoutPanel);
             this.Name = "Newsline";
             this.Text = "Newsline";
             this.Load += new System.EventHandler(this.Newsline_Load);
             this.panel1.ResumeLayout(false);
+            this.NewslineLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +111,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.FlowLayoutPanel NewslineLayoutPanel;
+        private System.Windows.Forms.Button button1;
     }
 }

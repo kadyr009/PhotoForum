@@ -7,16 +7,21 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PhotoForum
 {
-    public partial class PhotoControl : UserControl
+    public partial class PhotoControl : System.Windows.Forms.UserControl
     {
         private string connectionString = "Data Source=PhotoForumDB.sqlite;";
         private int photoID = -1;
+
+        bool isShow = false;
 
         public PhotoControl()
         {
@@ -43,12 +48,74 @@ namespace PhotoForum
             set { lblDescription.Text = value; }
         }
 
-        public event EventHandler ShowCommentsClicked;
-
         private void ShowComments_Click(object sender, EventArgs e)
         {
-            if (ShowCommentsClicked != null)
-                ShowCommentsClicked(this, EventArgs.Empty);
+            if (!isShow)
+            {
+                panel2.Height = 200;
+                this.Height += 200;
+
+                CommentWrite commentWrite = new CommentWrite
+                {
+                    PhotoID = photoID,
+                    Width = 372,
+                    Height = 32
+                };
+
+                panel3.Controls.Add(commentWrite);
+                panel3.Height = 35;
+
+                int commentHeight = 0; 
+
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    string query = "SELECT c.CommentText, c.DatePosted, u.UserName FROM Comments c JOIN Users u ON c.UserID = u.UserID WHERE c.PhotoID = @PhotoID";
+                    SQLiteCommand command = new SQLiteCommand(query, connection);
+                    command.Parameters.AddWithValue("@PhotoID", photoID);
+                    connection.Open();
+
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CommentControl commentControl = new CommentControl
+                            {
+                                UserName = reader["UserName"].ToString(),
+                                Comment = reader["CommentText"].ToString(),
+                                Date = reader["DatePosted"].ToString(),
+                                Width = 350,
+                                Height = 100,
+                                Top = commentHeight 
+                            };
+
+                            commentHeight += commentControl.Height; 
+
+                            panel2.Controls.Add(commentControl);
+                        }
+                    }
+                }
+
+                panel2.Height = commentHeight > 200 ? commentHeight : 200;
+                this.Height += panel2.Height - 200;
+
+                isShow = true;
+            }
+            else
+            {
+                int originalPanel2Height = 200;
+                int originalControlHeight = this.Height - panel2.Height + originalPanel2Height;
+
+                panel2.Height = 0;
+
+                foreach (System.Windows.Forms.Control control in panel2.Controls.OfType<CommentControl>().ToList())
+                {
+                    panel2.Controls.Remove(control);
+                }
+
+                this.Height = originalControlHeight - 200;
+
+                isShow = false;
+            }
         }
 
         private void PhotoControl_Load(object sender, EventArgs e)
@@ -94,6 +161,8 @@ namespace PhotoForum
                     }
                 }
             }
+
+            lblLikesCount.Text = CountLikes().ToString();
         }
 
         private int CountLikes()

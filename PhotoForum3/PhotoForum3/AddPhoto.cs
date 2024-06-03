@@ -69,8 +69,8 @@ namespace PhotoForum
                     System.Windows.MessageBox.Show("Image uploaded successfully!");
 
                     this.Hide();
-                    Newsline newsline = new Newsline(); 
-                    newsline.ShowDialog();
+                    Program.Newsline.Update_Newsline();
+                    Program.Newsline.Show();
                     this.Close();
                 }
                 else
