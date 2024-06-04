@@ -31,6 +31,7 @@
             this.txtUserName = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.Label();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -55,22 +56,30 @@
             // 
             this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDate.AutoSize = true;
-            this.txtDate.Location = new System.Drawing.Point(269, 142);
+            this.txtDate.Location = new System.Drawing.Point(267, 140);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(35, 13);
             this.txtDate.TabIndex = 2;
             this.txtDate.Text = "label1";
             // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
             // CommentControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtComment);
             this.Controls.Add(this.txtUserName);
             this.Name = "CommentControl";
-            this.Size = new System.Drawing.Size(403, 174);
-            this.Load += new System.EventHandler(this.CommentControl_Load);
+            this.Size = new System.Drawing.Size(401, 172);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,5 +90,6 @@
         private System.Windows.Forms.Label txtUserName;
         private System.Windows.Forms.Label txtComment;
         private System.Windows.Forms.Label txtDate;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
     }
 }

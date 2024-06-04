@@ -47,17 +47,14 @@ namespace PhotoForum
                 return;
             }
 
-            string title = "Sample Title";
-            string description = "Sample Description";
-
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 string query = "INSERT INTO Photos (UserID, Title, Description, DateUploaded, ImagePath) VALUES (@UserID, @Title, @Description, @DateUploaded, @ImagePath)";
                 SQLiteCommand command = new SQLiteCommand(query, connection);
 
                 command.Parameters.AddWithValue("@UserID", Program.UserID);
-                command.Parameters.AddWithValue("@Title", title);
-                command.Parameters.AddWithValue("@Description", description);
+                command.Parameters.AddWithValue("@Title", txtTitle.Text);
+                command.Parameters.AddWithValue("@Description", txtDescription.Text);
                 command.Parameters.AddWithValue("@DateUploaded", DateTime.Now);
                 command.Parameters.AddWithValue("@ImagePath", imagePath);
 
@@ -68,10 +65,7 @@ namespace PhotoForum
                 {
                     System.Windows.MessageBox.Show("Image uploaded successfully!");
 
-                    this.Hide();
                     Program.Newsline.Update_Newsline();
-                    Program.Newsline.Show();
-                    this.Close();
                 }
                 else
                 {

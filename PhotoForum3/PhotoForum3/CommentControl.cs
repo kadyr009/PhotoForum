@@ -13,8 +13,6 @@ namespace PhotoForum
 {
     public partial class CommentControl : UserControl
     {
-        private string connectionString = "Data Source=PhotoForumDB.sqlite;";
-
         public CommentControl()
         {
             InitializeComponent();
@@ -35,11 +33,6 @@ namespace PhotoForum
         {
             get { return txtDate.Text; }
             set { txtDate.Text = value; }
-        }
-
-        private void CommentControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

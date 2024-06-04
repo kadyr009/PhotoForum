@@ -24,6 +24,19 @@ namespace PhotoForum
             InitializeComponent();
 
             NewslineLayoutPanel.Resize += new EventHandler(NewslineLayoutPanel_Resize);
+
+            AddNewTab("Add Photo", new AddPhoto());
+        }
+
+        private void AddNewTab(string title, Form form)
+        {
+            TabPage tabPage = new TabPage(title);
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            tabPage.Controls.Add(form);
+            tabControl.TabPages.Add(tabPage);
+            form.Show();
         }
 
         private void NewslineLayoutPanel_Resize(object sender, EventArgs e)
@@ -45,7 +58,6 @@ namespace PhotoForum
 
         private void AddPhoto_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AddPhoto addingForm = new AddPhoto();
             addingForm.ShowDialog();
         }
@@ -71,6 +83,7 @@ namespace PhotoForum
                 {
                     PhotoControl photoControl = new PhotoControl
                     {
+                        Title = reader["Title"].ToString(),
                         PhotoPath = reader["ImagePath"].ToString(),
                         Description = reader["Description"].ToString(),
                         PhotoID = Convert.ToInt32(reader["PhotoID"]),
@@ -78,9 +91,19 @@ namespace PhotoForum
                         Height = 320
                     };
 
+                    int horizontalMargin = (NewslineLayoutPanel.ClientSize.Width - photoControl.Width) / 2;
+
+                    photoControl.Margin = new Padding(horizontalMargin, photoControl.Margin.Top, horizontalMargin, photoControl.Margin.Bottom);
+
                     NewslineLayoutPanel.Controls.Add(photoControl);
                 }
             }
+        }
+
+        private void addPhotoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddPhoto addingForm = new AddPhoto();
+            addingForm.ShowDialog();
         }
     }
 }

@@ -38,16 +38,19 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLikesCount
             // 
             this.lblLikesCount.AutoSize = true;
-            this.lblLikesCount.Location = new System.Drawing.Point(78, 43);
+            this.lblLikesCount.Location = new System.Drawing.Point(16, 13);
             this.lblLikesCount.Name = "lblLikesCount";
             this.lblLikesCount.Size = new System.Drawing.Size(35, 13);
             this.lblLikesCount.TabIndex = 1;
@@ -55,7 +58,7 @@
             // 
             // ShowComments
             // 
-            this.ShowComments.Location = new System.Drawing.Point(189, 8);
+            this.ShowComments.Location = new System.Drawing.Point(156, 6);
             this.ShowComments.Name = "ShowComments";
             this.ShowComments.Size = new System.Drawing.Size(75, 23);
             this.ShowComments.TabIndex = 2;
@@ -66,7 +69,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(78, 56);
+            this.lblDescription.Location = new System.Drawing.Point(16, 49);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(35, 13);
             this.lblDescription.TabIndex = 3;
@@ -87,7 +90,7 @@
             // 
             // LikeBut
             // 
-            this.LikeBut.Location = new System.Drawing.Point(81, 8);
+            this.LikeBut.Location = new System.Drawing.Point(57, 6);
             this.LikeBut.Name = "LikeBut";
             this.LikeBut.Size = new System.Drawing.Size(75, 23);
             this.LikeBut.TabIndex = 4;
@@ -141,10 +144,29 @@
             this.panel4.Size = new System.Drawing.Size(372, 320);
             this.panel4.TabIndex = 6;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txtTitle);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(375, 26);
+            this.panel5.TabIndex = 6;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.AutoSize = true;
+            this.txtTitle.Location = new System.Drawing.Point(16, 4);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(35, 13);
+            this.txtTitle.TabIndex = 0;
+            this.txtTitle.Text = "label1";
+            // 
             // PhotoControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.MaximumSize = new System.Drawing.Size(375, 0);
@@ -157,6 +179,8 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,5 +195,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label txtTitle;
     }
 }

@@ -35,6 +35,11 @@ namespace PhotoForum
             get { return photoID; }
             set { photoID = value; }
         }
+        public string Title
+        {
+            get { return txtTitle.Text; }
+            set { txtTitle.Text = value; }
+        }
 
         public string PhotoPath
         {
@@ -50,17 +55,17 @@ namespace PhotoForum
 
         private void ShowComments_Click(object sender, EventArgs e)
         {
+            CommentWrite commentWrite = new CommentWrite
+            {
+                PhotoID = photoID,
+                Width = 372,
+                Height = 32
+            };
+
             if (!isShow)
             {
                 panel2.Height = 200;
                 this.Height += 200;
-
-                CommentWrite commentWrite = new CommentWrite
-                {
-                    PhotoID = photoID,
-                    Width = 372,
-                    Height = 32
-                };
 
                 panel3.Controls.Add(commentWrite);
                 panel3.Height = 35;
@@ -111,6 +116,8 @@ namespace PhotoForum
                 {
                     panel2.Controls.Remove(control);
                 }
+
+                panel3.Controls.Remove(commentWrite);
 
                 this.Height = originalControlHeight - 200;
 

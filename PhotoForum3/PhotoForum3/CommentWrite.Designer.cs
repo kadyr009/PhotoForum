@@ -34,18 +34,19 @@
             // 
             // textBox
             // 
-            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.Location = new System.Drawing.Point(56, 50);
+            this.textBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox.Location = new System.Drawing.Point(0, 0);
+            this.textBox.Margin = new System.Windows.Forms.Padding(0);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(100, 20);
+            this.textBox.Size = new System.Drawing.Size(373, 20);
             this.textBox.TabIndex = 0;
             // 
             // Submit_But
             // 
-            this.Submit_But.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Submit_But.Location = new System.Drawing.Point(192, 50);
+            this.Submit_But.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Submit_But.Location = new System.Drawing.Point(273, 0);
             this.Submit_But.Name = "Submit_But";
-            this.Submit_But.Size = new System.Drawing.Size(75, 23);
+            this.Submit_But.Size = new System.Drawing.Size(100, 19);
             this.Submit_But.TabIndex = 1;
             this.Submit_But.Text = "Submit";
             this.Submit_But.UseVisualStyleBackColor = true;
@@ -55,10 +56,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.Submit_But);
             this.Controls.Add(this.textBox);
+            this.MaximumSize = new System.Drawing.Size(375, 21);
             this.Name = "CommentWrite";
-            this.Size = new System.Drawing.Size(289, 80);
+            this.Size = new System.Drawing.Size(373, 19);
             this.ResumeLayout(false);
             this.PerformLayout();
 
