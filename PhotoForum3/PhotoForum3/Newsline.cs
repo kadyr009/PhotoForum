@@ -26,6 +26,7 @@ namespace PhotoForum
             NewslineLayoutPanel.Resize += new EventHandler(NewslineLayoutPanel_Resize);
 
             AddNewTab("Add Photo", new AddPhoto());
+            AddNewTab("My Profile", new Profile());
         }
 
         private void AddNewTab(string title, Form form)
