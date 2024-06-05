@@ -164,6 +164,8 @@ namespace PhotoForum
 
                                 insertLikeCommand.ExecuteNonQuery();
                             }
+
+                            Program.Newsline.LikedForm.Update_Content();
                         }
                     }
                 }

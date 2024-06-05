@@ -18,6 +18,10 @@ namespace PhotoForum
     public partial class Newsline : Form
     {
         private string connectionString = "Data Source=PhotoForumDB.sqlite;";
+        
+        public AddPhoto AddPhotoForm;
+        public Profile ProfileForm;
+        public Liked LikedForm;
 
         public Newsline()
         {
@@ -25,8 +29,14 @@ namespace PhotoForum
 
             NewslineLayoutPanel.Resize += new EventHandler(NewslineLayoutPanel_Resize);
 
-            AddNewTab("Add Photo", new AddPhoto());
-            AddNewTab("My Profile", new Profile());
+            AddPhotoForm = new AddPhoto();
+            AddNewTab("Add Photo", AddPhotoForm);
+
+            ProfileForm = new Profile();
+            AddNewTab("My Profile", ProfileForm);
+
+            LikedForm = new Liked();
+            AddNewTab("Liked", LikedForm);
         }
 
         private void AddNewTab(string title, Form form)
@@ -55,12 +65,6 @@ namespace PhotoForum
             Program.Newsline = this;
 
             Update_Newsline();
-        }
-
-        private void AddPhoto_Click(object sender, EventArgs e)
-        {
-            AddPhoto addingForm = new AddPhoto();
-            addingForm.ShowDialog();
         }
 
         public void CreatePanel(PhotoControl formsControl)

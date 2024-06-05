@@ -30,11 +30,11 @@
         {
             this.userPanel = new System.Windows.Forms.Panel();
             this.contentPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUserName = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,17 +64,6 @@
             this.contentPanel.Size = new System.Drawing.Size(800, 280);
             this.contentPanel.TabIndex = 1;
             this.contentPanel.WrapContents = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::PhotoForum.Properties.Resources._3395545;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(66, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 86);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // txtUserName
             // 
@@ -112,11 +101,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Your publications";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PhotoForum.Properties.Resources._3395545;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(66, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 86);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.userPanel);

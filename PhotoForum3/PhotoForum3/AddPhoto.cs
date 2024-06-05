@@ -66,6 +66,8 @@ namespace PhotoForum
                     System.Windows.MessageBox.Show("Image uploaded successfully!");
 
                     Program.Newsline.Update_Newsline();
+
+                    Program.Newsline.ProfileForm.Update_Content();
                 }
                 else
                 {

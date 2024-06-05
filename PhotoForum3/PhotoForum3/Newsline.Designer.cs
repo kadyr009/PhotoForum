@@ -31,10 +31,8 @@
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.NewslineLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.AddPhoto = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
-            this.NewslineLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,8 +60,8 @@
             // 
             this.NewslineLayoutPanel.AutoScroll = true;
             this.NewslineLayoutPanel.AutoSize = true;
+            this.NewslineLayoutPanel.BackColor = System.Drawing.Color.Bisque;
             this.NewslineLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.NewslineLayoutPanel.Controls.Add(this.AddPhoto);
             this.NewslineLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NewslineLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.NewslineLayoutPanel.Location = new System.Drawing.Point(3, 3);
@@ -73,16 +71,6 @@
             this.NewslineLayoutPanel.Size = new System.Drawing.Size(1092, 519);
             this.NewslineLayoutPanel.TabIndex = 0;
             this.NewslineLayoutPanel.WrapContents = false;
-            // 
-            // AddPhoto
-            // 
-            this.AddPhoto.Location = new System.Drawing.Point(3, 493);
-            this.AddPhoto.Name = "AddPhoto";
-            this.AddPhoto.Size = new System.Drawing.Size(75, 23);
-            this.AddPhoto.TabIndex = 0;
-            this.AddPhoto.Text = "Add Photo";
-            this.AddPhoto.UseVisualStyleBackColor = true;
-            this.AddPhoto.Click += new System.EventHandler(this.AddPhoto_Click);
             // 
             // tabControl
             // 
@@ -109,7 +97,6 @@
             this.Load += new System.EventHandler(this.Newsline_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.NewslineLayoutPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -119,7 +106,6 @@
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.FlowLayoutPanel NewslineLayoutPanel;
-        private System.Windows.Forms.Button AddPhoto;
         private System.Windows.Forms.TabControl tabControl;
     }
 }

@@ -30,46 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhotoControl));
             this.lblLikesCount = new System.Windows.Forms.Label();
-            this.ShowComments = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LikeBut = new System.Windows.Forms.Button();
+            this.ShowComments = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLikesCount
             // 
             this.lblLikesCount.AutoSize = true;
+            this.lblLikesCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.lblLikesCount.Location = new System.Drawing.Point(16, 13);
             this.lblLikesCount.Name = "lblLikesCount";
-            this.lblLikesCount.Size = new System.Drawing.Size(35, 13);
+            this.lblLikesCount.Size = new System.Drawing.Size(30, 24);
             this.lblLikesCount.TabIndex = 1;
-            this.lblLikesCount.Text = "label1";
-            // 
-            // ShowComments
-            // 
-            this.ShowComments.Location = new System.Drawing.Point(156, 6);
-            this.ShowComments.Name = "ShowComments";
-            this.ShowComments.Size = new System.Drawing.Size(75, 23);
-            this.ShowComments.TabIndex = 2;
-            this.ShowComments.Text = "Comments";
-            this.ShowComments.UseVisualStyleBackColor = true;
-            this.ShowComments.Click += new System.EventHandler(this.ShowComments_Click);
+            this.lblLikesCount.Text = "12";
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(16, 49);
+            this.lblDescription.Location = new System.Drawing.Point(16, 51);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(35, 13);
             this.lblDescription.TabIndex = 3;
@@ -90,13 +81,31 @@
             // 
             // LikeBut
             // 
-            this.LikeBut.Location = new System.Drawing.Point(57, 6);
+            this.LikeBut.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.LikeBut.BackgroundImage = global::PhotoForum.Properties.Resources.pngimg_com___like_PNG62;
+            this.LikeBut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LikeBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LikeBut.ForeColor = System.Drawing.Color.Moccasin;
+            this.LikeBut.Location = new System.Drawing.Point(51, 6);
             this.LikeBut.Name = "LikeBut";
-            this.LikeBut.Size = new System.Drawing.Size(75, 23);
+            this.LikeBut.Size = new System.Drawing.Size(36, 32);
             this.LikeBut.TabIndex = 4;
-            this.LikeBut.Text = "Like";
-            this.LikeBut.UseVisualStyleBackColor = true;
+            this.LikeBut.UseVisualStyleBackColor = false;
             this.LikeBut.Click += new System.EventHandler(this.LikeBut_Click);
+            // 
+            // ShowComments
+            // 
+            this.ShowComments.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.ShowComments.BackgroundImage = global::PhotoForum.Properties.Resources._1789313;
+            this.ShowComments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ShowComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowComments.ForeColor = System.Drawing.Color.Moccasin;
+            this.ShowComments.Location = new System.Drawing.Point(118, 6);
+            this.ShowComments.Name = "ShowComments";
+            this.ShowComments.Size = new System.Drawing.Size(35, 32);
+            this.ShowComments.TabIndex = 2;
+            this.ShowComments.UseVisualStyleBackColor = false;
+            this.ShowComments.Click += new System.EventHandler(this.ShowComments_Click);
             // 
             // panel2
             // 
@@ -119,6 +128,17 @@
             this.panel3.Size = new System.Drawing.Size(375, 0);
             this.panel3.TabIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.MaximumSize = new System.Drawing.Size(375, 320);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(372, 320);
+            this.panel4.TabIndex = 6;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -132,17 +152,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.MaximumSize = new System.Drawing.Size(375, 320);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(372, 320);
-            this.panel4.TabIndex = 6;
             // 
             // panel5
             // 
@@ -166,9 +175,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BackgroundImage = global::PhotoForum.Properties.Resources.vecteezy_speech_bubble_png_thought_bubble_png_comic_bubble_21665053;
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel4);
+            this.DoubleBuffered = true;
             this.MaximumSize = new System.Drawing.Size(375, 0);
             this.MinimumSize = new System.Drawing.Size(375, 320);
             this.Name = "PhotoControl";
@@ -177,8 +189,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);

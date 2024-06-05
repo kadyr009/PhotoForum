@@ -78,7 +78,6 @@ namespace PhotoForum
 
                     while (reader.Read())
                     {
-                        Console.WriteLine("RRRRRR");
                         PhotoControl photoControl = new PhotoControl
                         {
                             Title = reader["Title"].ToString(),

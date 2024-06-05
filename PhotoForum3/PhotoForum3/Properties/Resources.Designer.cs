@@ -63,6 +63,16 @@ namespace PhotoForum.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1789313 {
+            get {
+                object obj = ResourceManager.GetObject("1789313", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3395545 {
             get {
                 object obj = ResourceManager.GetObject("3395545", resourceCulture);
@@ -76,6 +86,26 @@ namespace PhotoForum.Properties {
         internal static System.Drawing.Bitmap _665142_map_512x512 {
             get {
                 object obj = ResourceManager.GetObject("665142_map_512x512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngimg_com___like_PNG62 {
+            get {
+                object obj = ResourceManager.GetObject("pngimg.com - like_PNG62", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vecteezy_speech_bubble_png_thought_bubble_png_comic_bubble_21665053 {
+            get {
+                object obj = ResourceManager.GetObject("vecteezy_speech-bubble-png-thought-bubble-png-comic-bubble_21665053", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

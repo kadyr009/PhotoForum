@@ -32,11 +32,11 @@
             this.UploadImage = new System.Windows.Forms.Button();
             this.SelectImage = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,28 +83,14 @@
             this.panel1.Size = new System.Drawing.Size(361, 233);
             this.panel1.TabIndex = 3;
             // 
-            // txtDescription
+            // label3
             // 
-            this.txtDescription.Location = new System.Drawing.Point(112, 162);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(100, 20);
-            this.txtDescription.TabIndex = 3;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(112, 79);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 20);
-            this.txtTitle.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Title";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(112, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Description";
             // 
             // label2
             // 
@@ -115,20 +101,34 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Path";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Description";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Title";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(112, 79);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.TabIndex = 4;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(112, 162);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(100, 20);
+            this.txtDescription.TabIndex = 3;
             // 
             // AddPhoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(748, 462);
             this.Controls.Add(this.panel1);
             this.Name = "AddPhoto";

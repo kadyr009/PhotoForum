@@ -64,17 +64,20 @@ namespace PhotoForum
 
         private void Regis_But_Click(object sender, EventArgs e)
         {
+            
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string email = txtEmail.Text;
+            string role = txtRole.Text;
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-                string query = "INSERT INTO Users (Username, Password, Email, Role) VALUES (@Username, @Password, @Email, 'user')";
+                string query = "INSERT INTO Users (Username, Password, Email, Role) VALUES (@Username, @Password, @Email, @Role)";
                 SQLiteCommand command = new SQLiteCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
                 command.Parameters.AddWithValue("@Password", password);
                 command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Role", role);
 
                 connection.Open();
                 int result = command.ExecuteNonQuery();

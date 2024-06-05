@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1789313" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1789313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3395545" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3395545.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="665142_map_512x512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\665142_map_512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngimg.com - like_PNG62" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngimg.com - like_PNG62.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vecteezy_speech-bubble-png-thought-bubble-png-comic-bubble_21665053" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vecteezy_speech-bubble-png-thought-bubble-png-comic-bubble_21665053.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
